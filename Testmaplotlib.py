@@ -19,7 +19,7 @@ def main():
     l2, = plt.plot(x, y2, label='up')
 
     plt.xlim((-1, 2))
-    plt.ylim((-2, 3))
+    plt.ylim((-2, 5))
     plt.xlabel("I am x")
     plt.ylabel("I am y")
 
@@ -39,6 +39,18 @@ def main():
 
     plt.legend(handles=[l1, l2], labels=['aaa', 'bbb'], loc='best')
 
+    x0 = 1
+    y0 = 2*x0 + 1
+    plt.scatter(x0, y0, color='b')             # plot some point
+    plt.plot([x0, x0], [y0, 0], 'k--')
+
+    # plot annotation #
+    # method 1 #
+    plt.annotate(r'$2x+1=%s$' % y0, xy=(x0, y0), xycoords='data', xytext=(+30, -30), textcoords='offset points')
+
+    for label in ax.get_xticklabels() + ax.get_yticklabels():
+        label.set_fontsize(12)
+        label.set_bbox(dict(facecolor='white', edgecolor='None', alpha=0.7))
 
     plt.show()
 
