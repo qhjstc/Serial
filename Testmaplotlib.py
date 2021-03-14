@@ -38,6 +38,8 @@ def main():
     ax.spines['left'].set_position(('data', 0))
 
     plt.legend(handles=[l1, l2], labels=['aaa', 'bbb'], loc='best')
+
+
     plt.show()
 
 
